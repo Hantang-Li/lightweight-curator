@@ -1,0 +1,13 @@
+1. sqlite3 support
+    - 1.1 file storage
+    - 1.2 key-value storage
+    - 1.3 robust msg parsing support
+2. docker support
+    - 2.1 integration test
+3. webpack package of client and server
+    3.1 client uid assignment
+    3.2 client uid behavior tracker
+    3.3 github open source commit
+4. possible babel transpiler syntax
+5. golang support
+6. zookeeper as system

@@ -1,0 +1,25 @@
+{
+  "name": "text-receiver",
+  "version": "1.0.1",
+  "description": "a lightweight simple key-value cache system",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/**/test_*.js",
+    "server": "node index.js 127.0.0.1:5050",
+    "client": "node client.js",
+    "start": "node index.js 127.0.0.1:5050",
+    "version": "node -v"
+  },
+  "keywords": [
+    "text",
+    "transfer"
+  ],
+  "author": "Junxuan Wu",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "keyv": "^4.0.3",
+    "mocha": "^8.3.0",
+    "zookeeper": "^4.9.0"
+  }
+}
