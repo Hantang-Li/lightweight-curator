@@ -30,8 +30,9 @@ class RecvController {
     async process(rcMessage, communication) {
         if (rcMessage.status in this.controllers) {
             let controllers = this.controllers[rcMessage.status];
-
+            console.log(this.controllers);
             for (let c of controllers) {
+                console.log(c);
                 if (c instanceof AbstractControllerConfig) {
                     if (c.isValid(rcMessage)) {
                         await c.process(rcMessage, communication);
@@ -74,9 +75,13 @@ class RecvController {
         }
 
         else {
-            this.controllers[controllerType].push(async (rcMessage, communication) => {
-                handler(rcMessage, communication);
-            });
+            if (handler instanceof AbstractControllerConfig) {
+                this.controllers[controllerType].push(handler);
+            } else {
+                this.controllers[controllerType].push(async (rcMessage, communication) => {
+                    handler(rcMessage, communication);
+                });
+            }
         }
     }
 
